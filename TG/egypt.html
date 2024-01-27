@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-center" style="max-width: 1700px">
+    <img class="w3-image" src="desert2.jpg" alt="Me" width="1700" style="height: 400px;">
+    <div class="w3-display-middle w3-padding-large w3-border w3-wide w3-text-light-grey w3-center">
+      <h1 class="w3-hide-medium w3-hide-small w3-xxxlarge" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">RAWL'S TOUR</h1>
+      <h5 class="w3-hide-large" style="white-space:nowrap">JANE DOE</h5>
+    </div>
+  
+    <!-- Navbar (placed at the bottom of the header image) -->
+    <div class="w3-bar w3-light-grey w3-round w3-display-bottommiddle w3-hide-small" style="bottom: -16px">
+        <a href="egypt.html" class="w3-bar-item w3-button active" style="font-size: 18px; padding: 12px 16px; border-radius: 6px; background-color: #3498db; color: white;">Egypt Tour</a>
+        <a href="ghana.html" class="w3-bar-item w3-button" style="font-size: 18px; padding: 12px 16px; border-radius: 6px;">Ghana Tour</a>
+        <a href="#payments" class="w3-bar-item w3-button" style="font-size: 18px; padding: 12px 16px; border-radius: 6px;">Payments</a>
+        <a href="#about" class="w3-bar-item w3-button" style="font-size: 18px; padding: 12px 16px; border-radius: 6px;">About Us</a>
+        <a href="#founder" class="w3-bar-item w3-button" style="font-size: 18px; padding: 12px 16px; border-radius: 6px;">Founder</a>
+    </div>
+    
+</header>
+  
+
+<!-- Navbar on small screens -->
+<div class="w3-center w3-light-grey w3-padding-16 w3-hide-large w3-hide-medium">
+<div class="w3-bar w3-light-grey">
+  <a href="#" class="w3-bar-item w3-button">Home</a>
+  <a href="#portfolio" class="w3-bar-item w3-button">Portfolio</a>
+  <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+</div>
+</div>
+<!-- Page content -->
+<div class="w3-content w3-padding-large w3-margin-top" id="portfolio">
+
+  <!-- Images (Portfolio) -->
+  <div class="container">
+    <img src="ducks.jpg" alt="Your Image">
+    <div class="description">
+        <h2>Title or Description</h2>
+        <p>Your detailed description goes here. You can include multiple paragraphs or other HTML elements as needed.</p>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="w3-light-grey w3-padding-large w3-padding-32 w3-margin-top" id="contact">
+    <h3 class="w3-center">Contact</h3>
+    <hr>
+    <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sed tellus.</p>
+
+    <form action="/action_page.php" target="_blank">
+      <div class="w3-section">
+        <label>Name</label>
+        <input class="w3-input w3-border" type="text" required name="Name">
+      </div>
+      <div class="w3-section">
+        <label>Email</label>
+        <input class="w3-input w3-border" type="text" required name="Email">
+      </div>
+      <div class="w3-section">
+        <label>Message</label>
+        <input class="w3-input w3-border" required name="Message">
+      </div>
+      <button type="submit" class="w3-button w3-block w3-dark-grey">Send</button>
+    </form><br>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+
+  </div>
+
+<!-- End page content -->
+</div>
+
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const sections = document.querySelectorAll('.w3-content');
+        const navbarLinks = document.querySelectorAll('.w3-bar-item');
+
+        function highlightNavbarLink() {
+            const scrollPosition = window.scrollY;
+
+            sections.forEach((section, index) => {
+                const sectionTop = section.offsetTop;
+                const sectionBottom = sectionTop + section.clientHeight;
+
+                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                    navbarLinks.forEach(link => link.classList.remove('active'));
+                    navbarLinks[index].classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', highlightNavbarLink);
+        window.addEventListener('resize', highlightNavbarLink);
+    });
+</script>
+
+
+</body>
+</html>
